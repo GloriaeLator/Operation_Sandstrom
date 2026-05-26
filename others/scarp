@@ -1,0 +1,11 @@
+00000000: 0900 1000  goto address 0x0010
+00000004: 0300 0000  set register 0 to 0
+00000008: 1000 0000  print the value of register 0
+0000000c: 0d00 0000  exit
+00000010: 0300 0a00  set register 0 to 10
+00000014: 0301 0c00  set register 1 to 12
+00000018: 0f00 0100  add reg 0 with reg 1 ; r0 = 22 r1 = 12
+0000001c: 0301 1400  set r1 = 20
+00000020: 0f00 0100  add r0 with r1 ; r0 = 42 r1=20
+00000024: 1000 0000  print r0
+00000028: 0d00 0000  exit

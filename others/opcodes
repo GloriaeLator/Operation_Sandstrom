@@ -1,0 +1,36 @@
+*0d aa bbcc - exit
+*03 aa bbcc - mov to register aa, value 0xccbb
+*10 aa bbcc - print value at aa register
+*06 aa bbcc - cmp aa register and bb register
+*01 aa bbcc - sub aa register = aa - bb register
+*0e aa bbcc - jump if not equal, to instruction at address 0xccbb
+*0a aa bbcc - write to memory location aa from register bb (4bytes)
+*04 aa bbcc - copy memory from the location 0xccbb to register aa (4bytes)
+*0f aa bbcc - add aa register = aa register + bb register
+*0c aa bbcc - call 0xccbb instruction 
+*00 aa bbcc - ret to original path
+*02 aa bbcc - jump if equal, to instruction at address 0xccbb
+*09 aa bbcc - goto instruction address 0xccbb
+
+*07 aa bbcc - mov val from reg[aa] = reg[bb]
+*0b aa bbcc - xor reg[aa] ^= reg[bb]
+
+05 ?
+08 ?
+
+
+general structure 
+
+ii aa bb cc 
+ii aa bbcc
+
+0a aa bbcc - *(uint32_t*)&memory[ R[aa] ] = R[bb];
+04 aa bbcc - R[aa] = *(uint32_t*)&memory[ R[bb] ];
+
+0a slot src 00
+ACC[R[slot]] = low8(R[src])
+
+04 dst slot 00
+R[dst] = ACC[slot]
+ 
+
